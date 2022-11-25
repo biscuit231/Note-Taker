@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require('express').Router();
 // const apiR = require('./routes/api');
 // const htmlR = require('./routes/html');
-const h = require('./routes/apiRoute')(htmlRoute);
-const a = require('./routes/apiRoute')(apiRoute);
+const h = require('./routes/apiRoute');
+const a = require('./routes/apiRoute');
 
 const app = express();
 
