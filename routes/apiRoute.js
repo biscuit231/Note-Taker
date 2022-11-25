@@ -4,17 +4,17 @@ const uniqid = require('uniqid');
 
 module.exports = (htmlRoute) => {
     htmlRoute.get('/notes', (req, res) => {
-        res.sendFile(path.join(__dirname, '../public/notes.html'));
+        res.sendFile(path.join(__dirname, './public/notes.html'));
         console.log('Path /notes');
     });
     
     htmlRoute.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../public/index.html'));
+        res.sendFile(path.join(__dirname, './public/index.html'));
         console.log('Path *');
     });
     
     htmlRoute.get('/', (req, res) => {
-        res.sendFile(path.join(__dirname, '../public/index.html'));
+        res.sendFile(path.join(__dirname, './public/index.html'));
         console.log('Path /');
     });
 };
