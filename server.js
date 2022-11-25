@@ -1,8 +1,5 @@
 const express = require('express');
-require('./routes/api')(app);
-require('./routes/html')(app);
-// const h = require('./routes/apiRoute');
-// const a = require('./routes/apiRoute');
+
 
 const app = express();
 
@@ -12,6 +9,8 @@ app.use(express.static('public'));
 
 const PORT = process.env.PORT || 3001;
 
+require('./routes/api')(app);
+require('./routes/html')(app);
 // app.use('/api', apiR);
 // app.use('/', htmlR);
 
