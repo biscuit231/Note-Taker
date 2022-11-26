@@ -3,13 +3,14 @@ const router = express.Router();
 const path = require("path");
 const uniqid = require('uniqid');
 const database = require('../db/db.json');
+const fs = require('fs');
 
 router.route("/")
     .get((req, res) => {
         res.sendFile(path.join(__dirname, '../db/db.json'));
     })
     .post((req, res) => {
-        const db = fs.readFileSync('../db/db.json');
+        let db = fs.readFileSync('db/db.json');
         db = JSON.parse(db);
         res.json(db);
         const notes = {
@@ -18,7 +19,7 @@ router.route("/")
           id: uniqid(),
         };
         db.push(notes);
-        fs.writeFileSync('../db/db.json', JSON.stringify(db));
+        fs.writeFileSync('db/db.json', JSON.stringify(db));
         res.json(db);
 });
 
